@@ -1,0 +1,433 @@
+#main-body{
+    background-image: linear-gradient(rgba(0, 0, 11, 0.8),
+    rgba(0, 0, 0, 0.9)) , 
+    url('../images/background.png');
+    
+}
+.footer{
+
+    width: 100%;
+}
+a{
+    text-decoration: unset;
+}
+.flex-div{
+    align-items: center;
+  display: flex;
+}
+a:visited{
+    color:blue;
+}
+#page-title{
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+#visible_button{
+    background-color: white;
+    border: 1px solid #ced4da;
+}
+.b-b{
+    border: 3px black;
+}
+.rsa{
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#headers{
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.middle{
+    text-align: center;
+}
+.carousel-inner {
+    box-shadow: 0px 0px 40px -15px red;
+}
+.dropdown-menu {
+    max-height:200px;
+    overflow-y: scroll;
+    box-sizing: content-box;
+    padding-top: 10px;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+ }
+ .dropdown-menu::-webkit-scrollbar {
+    width: 10px;
+    left:10%;
+    position: inherit;
+  }
+  
+  /* Track */
+  .dropdown-menu::-webkit-scrollbar-track { 
+    box-shadow: inset 0px 0px 5px white;
+    transition-duration: 0.4s;
+  }
+.blur{
+    backdrop-filter: blur(px);
+}
+
+  /* Handle */
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgb(36, 233, 36)
+    ,rgb(36,82,233));
+    
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  .dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+    rgb(36,82,233),rgb(36, 233, 36));
+    
+  }
+ /*
+ Scrollbar hide
+
+ .dropdown-menu::-webkit-scrollbar { width: 0 !important }
+ .element { overflow: -moz-scrollbars-none; }
+ .element { -ms-overflow-style: none; }
+ 
+ */
+ .card-hov{
+    transition-property: transform;
+    
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+ }
+.card-img-top{
+    transition-property: transform;
+    
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+.card-hov:hover{
+    transition-delay: 0.15s;
+    transform: scale(1.12);
+    cursor: pointer;
+}
+
+.mid{
+    margin: auto;
+}
+.bg-purple{
+    background-color: #1a237e;
+}
+.color-white{
+    color: white;
+}
+.color-yellow{
+    color:gold;
+}
+.color-red{
+    color:red;
+}
+.bg-grey{
+    background-color: #eaebec;
+}
+.color-black{
+    color: black;
+}
+.gilmer-font-bold{
+    font-family: var(--bs-font-gilmer);
+    font-weight: bold;
+}
+.card-title{
+    font-weight: bold;
+}
+.valign{
+    vertical-align:top;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+}
+.valign-bottom{
+    vertical-align:baseline;
+}
+.valign2{
+    vertical-align:top;
+}
+.card{
+    transition-property: box-shadows;
+
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+}
+
+.carousel-control-prev-icon{
+    
+    box-shadow: 0px 0px 10px white;
+    border-radius: 50px;
+
+}
+.carousel-control-next-icon{
+    
+    box-shadow: 0px 0px 10px white;
+    border-radius: 50px;
+
+}
+.shadow-bottom{
+    box-shadow: 0px 0px 15px ;
+}
+@media only screen and (max-width: 600px) {
+   .f-s-50{
+       font-size: 30px;
+   }
+   .f-s-25{
+       font-size: 25px;
+   }
+   .f-s-35{
+       font-size: 30px;
+   }
+   .f-s-20{
+       font-size: 20px;
+   }
+}
+
+/*Edit CSS*/
+@media screen and (min-width: 1050px) {
+   .seats{
+       justify-content: center;
+   }
+}
+
+.seats{
+    display:flex;
+    min-width: 100%;
+}
+
+.seats div{
+    border: 1px solid green;
+    border-radius: 5px;
+    height: 25px;
+    min-width: 30px;
+    margin: 10px;
+    text-align: center;
+    background-color: white;
+}
+
+.screen_main{
+    margin-top: 60px;
+    width: 100%;
+}
+
+.screen{
+    overflow-x: auto;
+    margin: auto;
+}
+
+.seat_area_name{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.screen_design{
+    width: 100%;
+    margin-top: 50px;
+}
+.screen_design_peta{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    height: 30px;
+    border: 3px double gray;
+    background-color: #AED6F1;
+}
+
+.white_description{
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 10px;
+    background-color: white;
+}
+
+.gray_description{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 10px;
+    background-color: gray;
+}
+
+.red_description{
+    border: 1px solid lightcoral;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 10px;
+    background-color: lightcoral;
+}
+
+.green_description{
+    border: 1px solid green;
+    border-radius: 5px;
+    padding: 2px 10px;
+    margin: 10px;
+    background-color: green;
+}
+
+.alert-info{
+    color: #a94442;
+    background-color: #f2dede;
+    border: 1px solid #a94442;
+}
+
+.alert li{
+    list-style: none;
+}
+.alert ul{
+    margin-bottom: 0;
+}
+
+.myaccount_edit{
+    margin-left: 10px;
+}
+
+.myaccount_edit a{
+    color: black;
+}
+
+.header_edit_show{
+    width: 100%;
+    justify-content: space-between;
+}
+
+.login_edit_show{
+    text-align: center;
+}
+
+.logo_edit_show{
+    padding: 0 15px!important;
+}
+
+.login_edit_show{
+    display: show;
+}
+
+.edit_cinema_show_time{
+    background-color: #EEEEEE;
+    padding: 25px;
+}
+.image_size_fix{
+    height: 250px;
+}
+
+.image_size_fix img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.edit_a_tag_movies{
+    color: black;
+}
+
+a:visited{
+    color: black;
+}
+
+.fix_size_of_movie_tag{
+    height: 360px;
+}
+
+.edit_index_movie_title{
+    font-size: 20px;
+    margin: 14px;
+}
+
+.image_size_control{
+    height: 220px;
+    width: 340px;
+}
+
+.image_size_control img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.barcode_size_control{
+    margin: auto;
+    height: 150px;
+    width: 200px;
+}
+
+.barcode_size_control img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.back_to_home a{
+    margin: 10px 0;
+    color: blue;
+    display: block;
+}
+
+.heading_css{
+    font-size: 48px!important;
+    font-family: var(--bs-font-gilmer);
+    font-weight: 600;
+    margin-bottom: 20px!important;
+}
+
+.ticket_details{
+    font-weight: 400;
+}
+
+.fix_size_of_ticekt_tag{
+
+}
+
+.edit_full_ticket{
+    margin: 20px 0;
+    background-color: #212529;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.edit_full_ticket a{
+    color: white;
+    text-align: center;
+    padding: 5px 0;
+    display: block;
+}
+
+.edit_booked{
+    height: 100px;
+    width: 100px;
+    margin: auto;
+}
+
+.edit_booked img{
+    height: 100%;
+    width: 100%;
+}
+
+.slider_images{
+    height: 500px;
+}
+
+.slider_images img{
+    height: 100%;
+    object-fit: cover;
+}
+
+.headings{
+    font-family: calibri;
+}
+
+.headings_font{
+    font-size: 50px!important;
+}

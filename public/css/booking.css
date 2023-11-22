@@ -1,0 +1,80 @@
+#tbl-screen {
+    border-collapse: separate;
+    border-spacing: 0 1em;
+    width:100%;
+    min-width: 1000px;
+    overflow-x: scroll;
+    table-layout: fixed;
+}
+
+
+
+#screen {
+    overflow-x: auto;
+}
+
+#tbl_data {
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#tbl_not_available{
+    text-align: center;
+}
+#tbl_data:hover {
+    border:1px solid darkcyan;
+    transform: scale(1.2);
+}
+
+#row_no {
+    font-weight: bolder;
+    font-size: 25px;
+    font-family: "ralewayExtraBold";
+    padding-left: 5px;
+    background: -webkit-linear-gradient(0deg,#ff9000 0,red 30%,#0a00b2 100%); 
+    -webkit-background-clip: text;
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+@media only screen and (min-width: 680px) {
+    #row_no{
+        font-size: 40px;
+    }
+
+}
+.border-1{
+    box-shadow: 0px 1px 5px -5px rgb(0, 0, 0);
+}
+#heading{
+    text-align: center;
+    font-size: 30px;
+
+}
+
+@media only screen and (max-width: 680px) {
+    #h3{
+        font-size: 20px;
+    }
+    #h4{
+        font-size: 15px;
+    }
+    #heading{
+        font-size: 25px;
+    }
+    #tbl_data:hover {
+        transform: scale(1.06);        
+    }
+    
+}
+.break-line{
+    border-bottom: 1px solid black;
+}
+.divider {
+        border-bottom: 1px solid black;
+        text-align: center;
+        font-size: 20px;
+        font-weight:bolder;
+        
+    }

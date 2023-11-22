@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html>
+<title>Admin Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../css/compact_util.css">
+<link rel="stylesheet" href="css/admin-style.css">
+<link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v5.15.3/css/pro.min.css">
+<link rel="stylesheet" href="../bootstrap/bootstrap.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src="script/main.js"></script>
+<script src="script/icon.js"></script>
+<link rel="icon" href="../images/favicon.png">
+<script src="script/progress-bar.js"></script>
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "ralewayMedium"
+    }
+
+    .active {
+        background-color: aqua;
+        box-shadow: 0px 0px 10px grey;
+    }
+
+    .notification {
+        color: white;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
+        border-radius: 2px;
+    }
+
+    .notification .badge {
+        position: absolute;
+        right: 6px;
+        border-radius: 50%;
+        background-color: red;
+        color: white;
+    }
+</style>
+
+<body class="w3-light-grey ">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
+            onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        <span class="w3-bar-item w3-right">MoviesYet</span>
+    </div>
+
+    <!-- Sidebar/menu -->
+    <nav class="w3-sidebar w3-collapse w3-white w3-animate-left " style="z-index:3;width:300px;" id="mySidebar"><br>
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="../images/ceo.jpg" class="w3-circle w3-margin-right"
+                    style="width:80px; box-shadow: 0px 0px 5px grey;">
+            </div>
+            <div class="w3-col s8 w3-bar">
+                <span>Welcome, <strong>Admin</strong></span><br>
+                <a href="#" class="w3-bar-item w3-button notification">
+                    <span><img class="width-50" src="../images/svg/icons8_mail_1.svg"></span>
+                    <span class="badge"></span>
+                </a>
+                <a href="#" class="w3-bar-item w3-button"><img class="width-50" src="../images/svg/services.svg"></a>
+
+            </div>
+        </div>
+        <hr>
+        <div class="w3-container">
+            <h5>Dashboard</h5>
+        </div>
+        <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+                onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+            <a href="index.html" class="w3-bar-item w3-button w3-padding"><img class="width-30" src="../images/svg/reading.svg"> 
+                Overview</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding active"><img class="width-30"
+                    src="../images/svg/icons8_dolby_digital.svg"> Theatre Screens</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30"
+                    src="../images/svg/calendar.svg">  Today Schedule</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30"
+                    src="../images/svg/icons8_wi-fi.svg">  Online Booking</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30"
+                    src="../images/svg/icons8_ticket_purchase.svg">  Offline Booking</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30"
+                    src="../images/svg/parallel_tasks.svg">  Booking Status</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30" src="../images/svg/list.svg"> 
+                History</a>
+            <a href="#" class="w3-bar-item w3-button w3-padding"><img class="width-30"
+                    src="../images/svg/settings.svg">  Settings</a><br><br>
+        </div>
+    </nav>
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+        title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:320px;margin-top:43px;">
+
+        <!-- Header -->
+        <header class="w3-container input-group " style="padding-top:22px">
+            <h5><b><i class="fa fa-dashboard"></i> ARRS Multiplex, Salem</b></h5>
+            <img src="../images/favicon.png" class="m-b-20 m-w-60 ms-md-auto flex-row flex-wrap" id="admin-logo">
+        </header>
+        <style>
+            #screen {
+                border-collapse: separate;
+                border-spacing: 0 1em;
+                width: 100%;
+                min-width: 700px;
+                
+                padding-right: 20px;
+                overflow-x: scroll;
+                table-layout: fixed;
+            }
+            #overflow{
+                overflow-x: auto;
+            }
+
+            td {
+                width: 20px;
+                text-align: center;
+                cursor:pointer;
+            }
+
+            .centered {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .divider {
+                border-bottom: 1px solid black;
+            }
+
+            .disabled {
+                opacity: 0.2;
+            }
+
+        </style>
+        <div class="container">
+            <div>
+                <h2>Screen 1
+                </h2>
+                
+            </div>
+        <div id="overflow">
+            <table id="screen">
+                <tr>
+                    <th colspan="26" style="text-align: center; font-size: 50px;" class="p-b-20">
+                        <h3 style=>Screen Facing this side</h3>
+                    </th>
+                </tr>
+
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">A</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg" class="disabled">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">B</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <td colspan="26 " class="p-l-55 divider">
+                    <h3>Silver</h3>
+                </td>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">C</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">D</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">E</td>
+                    <td>
+                        <img src="../images/svg/seat.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">F</td>
+                    <td>
+                        <img src="../images/svg/seat.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">G</td>
+                    <td>
+                        <img src="../images/svg/seat.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">H</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="26 " class="p-l-55 divider">
+                        <h3>Gold</h3>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">I</td>
+                    <td>
+                        <img src="../images/svg/seat.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">J</td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">24
+                    </td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder; font-size: 35px;">K</td>
+                    <td>
+                        <img src="../images/svg/seat.svg">
+                        1
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">2
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">3
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">4
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">5
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">6
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">7
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">8
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">9
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">10
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">11
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat.svg">12
+                    </td>
+                    <td class="p-l-5 p-r-5"></td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">13
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">14
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">15
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">16
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">17
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">18
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">19
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">20
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">21
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">22
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">23
+                    </td>
+                    <td>
+                        <img src="../images/svg/seat_red.svg">24
+                    </td>
+                </tr>
+                <td colspan="26 " class="p-l-55 divider">
+                    <h3>Platinum</h3>
+                </td>
+            </table>
+            </div>
+        </div>
+
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-16 w3-light-grey">
+            <h4>FOOTER</h4>
+            <p>Powered by Team AR</p>
+        </footer>
+
+        <!-- End page content -->
+    </div>
+
+    <script>
+        // Get the Sidebar
+        var mySidebar = document.getElementById("mySidebar");
+
+        // Get the DIV with overlay effect
+        var overlayBg = document.getElementById("myOverlay");
+
+        // Toggle between showing and hiding the sidebar, and add overlay effect
+        function w3_open() {
+            if (mySidebar.style.display === 'block') {
+                mySidebar.style.display = 'none';
+                overlayBg.style.display = "none";
+            } else {
+                mySidebar.style.display = 'block';
+                overlayBg.style.display = "block";
+            }
+        }
+
+        // Close the sidebar with the close button
+        function w3_close() {
+            mySidebar.style.display = "none";
+            overlayBg.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
