@@ -351,6 +351,10 @@ class moviecontroller extends Controller
         if(session()->has('show_id') && session()->has('screen_no') && session()->has('seat_id') && session()->has('seat_no'))
         {
             $user_id = $req->session()->get('user_login');
+            booked::where('user_id',$user_id)->where('status','=','pending')->delete();
+            seat_book::where('user_id',$user_id)->where('status','=','pending')->delete();
+            
+            $user_id = $req->session()->get('user_login');
             $show_id = $req->session()->get('show_id');
             $screen_no = $req->session()->get('screen_no');
             $seat_id_e = $req->session()->get('seat_id');
